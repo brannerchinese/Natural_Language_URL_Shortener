@@ -43,7 +43,3 @@ def get_path(cursor, url):
                 continue
         n += 1
     return prospective_shortened
-
-# To do: add a table to keep track of how many 1-char short forms there are ,
-# how many 2-char short forms, and so on. Eventually there will be no need to
-# check for empty 1-char records.

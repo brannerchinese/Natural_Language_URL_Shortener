@@ -18,4 +18,10 @@ This project uses Chinese characters ("kanji", as a shorthand name) as the basis
 
  1. Note that because the shortened strings are generated randomly, they are unlikely to be meaningful.
 
+### To Do
+
+ 1. Add a table to the database to keep track of how many 1-char short forms there are, how many 2-char short forms, and so on. Eventually there will be no need to check for empty 1-char records.
+
+ 1. Add an `expiration_date` field to the `shortened_to_url` table, so that some shortened URLs can be deleted after a given date. There should be a way of keeping track of which shortned URLs have such dates, so that `shortened_to_url` can be pruned easily.
+
 [end]
