@@ -10,7 +10,7 @@ This project uses Chinese characters ("kanji", as a shorthand name) as the basis
 
         sqlite3 shortener.db < create_shortener_database.sql
 
- 1. Run web-application:
+ 1. Enter the `url_shortener` directory and run the web-application:
 
         python web_app.py
 
