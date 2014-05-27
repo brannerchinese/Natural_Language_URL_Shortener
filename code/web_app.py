@@ -31,6 +31,7 @@ def index():
 @app.route('/shortened')
 def results():
     path = shorten.shorten(session['url'])
+    return render_template('results.html', path=path)
 
 if __name__ == ('__main__'):
         app.run(debug=True)
