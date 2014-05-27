@@ -4,7 +4,7 @@
 -- Script to populate URL-shortener database
 --
 -- Run as 
---     sqlite3 shortener.db < create_shortener_database.sql
+--     sqlite3 url.db < create_url_database.sql
 --
 -- ******************
 

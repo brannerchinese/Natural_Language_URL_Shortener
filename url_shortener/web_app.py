@@ -35,5 +35,9 @@ def results():
     path = shorten.shorten(session['url'])
     return render_template('results.html', path=path)
 
+@app.route('/<path>')
+def redirect():
+    pass
+
 if __name__ == '__main__':
     app.run(debug=True)
