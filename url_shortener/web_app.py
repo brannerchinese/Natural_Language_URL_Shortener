@@ -10,6 +10,8 @@ from flask.ext.bootstrap import Bootstrap
 from flask.ext.wtf import Form
 from wtforms import TextField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired
+import sys
+sys.path.append('code')
 import shorten
 
 class InputForm(Form):
@@ -33,5 +35,5 @@ def results():
     path = shorten.shorten(session['url'])
     return render_template('results.html', path=path)
 
-if __name__ == ('__main__'):
-        app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)

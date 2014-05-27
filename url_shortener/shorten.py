@@ -19,7 +19,7 @@ codepoints = list(range(13312, 40960))
 
 def shorten(url, db='shortener.db'):
     """Return a unique string to represent input string url."""
-    connection = sqlite3.connect('../' + db)
+    connection = sqlite3.connect(db)
     with connection:
         cursor = connection.cursor()
         path = get_path(cursor, url)

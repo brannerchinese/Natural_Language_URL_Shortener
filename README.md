@@ -8,11 +8,11 @@ This project uses Chinese characters ("kanji", as a shorthand name) as the basis
 
  1. Create database:
 
-        sqlite3 shortener.db < code/create_shortener_database.sql
+        sqlite3 shortener.db < create_shortener_database.sql
 
  1. Run web-application:
 
-        python code/web_app.py
+        python web_app.py
 
 ### Ideas
 
