@@ -3,6 +3,10 @@
 # David Prager Branner
 # 20140527, works.
 
+import sys
+if sys.version_info[0] != 3:
+    print('Python 3 required.')
+    sys.exit()
 import sqlite3
 import random
 

@@ -10,6 +10,10 @@ This project uses Chinese characters ("kanji", as a shorthand name) as the basis
 
         sqlite3 shortener.db < code/create_shortener_database.sql
 
+ 1. Run web-application:
+
+        python code/web_app.py
+
 ### Ideas
 
  1. There are some 27K kanji in Unicode Plane 0, so far fewer of them are needed than ASCII to generate the same number of strings of a given length: two-kanji strings number over 76M and three-kanji strings over 21T. We assume here that the purpose of shortened URLs is chiefly for human convenience, so it doesn't matter that each kanji is represented internally by a four-place hexadecimal sequence.
