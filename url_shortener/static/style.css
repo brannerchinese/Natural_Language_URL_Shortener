@@ -1,0 +1,12 @@
+.btn-xs {
+  margin: auto;
+  font-size: 9px;
+  line-height: 1;
+  padding: 0;
+  border-radius: 0;
+  background-color: #0ef;
+}
+
+label {
+  font-size:10px;
+}

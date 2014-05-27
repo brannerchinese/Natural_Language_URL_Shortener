@@ -12,9 +12,9 @@ import random
 
 """Using kanji, generate a string for use as the path in a shortened URL."""
 
-# Generate a randomly shuffled list of all kanji in Unicode Plane 0.
-# Valid codepoints range from hex 3400:9FFF i.e. decimal 13312:40959, inclusive.
-codepoints = list(range(13312, 40960))
+# Generate a list of all kanji in Unicode "CJK Unified Ideographs"
+# Valid codepoints range from hex 4E00:9FFF i.e. decimal 19968:40959, inclusive.
+codepoints = list(range(19968, 40960))
 
 
 def shorten(url, db='shortener.db'):
