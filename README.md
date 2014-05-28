@@ -6,11 +6,11 @@ This project uses Chinese characters ("kanji", as a shorthand name) as the basis
 
  1. This is a Python3 project. The only dependency outside of the `requirements.txt` file is `sqlite3`.
 
- 1. Create database:
+ 1. Enter the `url_shortener` directory and create database:
 
         sqlite3 shortener.db < create_shortener_database.sql
 
- 1. Enter the `url_shortener` directory and run the web-application:
+ 1. Then run the web-application:
 
         python web_app.py
 
