@@ -32,6 +32,8 @@ This project uses Chinese characters ("kanji", as a shorthand name) as the basis
 
 ### To Do
 
+ 1. Handle paths without a URL found in the dictionary.
+
  1. Validate URLs, both as to form and as to accessibility, before storing.
 
  1. Can we keep statistics on usage?
