@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # web_app.py
 # David Prager Branner
-# 20140527
+# 20140527, works
 
 """Flask application to run URL-shortening project."""
 
@@ -10,8 +10,6 @@ from flask.ext.bootstrap import Bootstrap
 from flask.ext.wtf import Form
 from wtforms import TextField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired
-import sys
-sys.path.append('code')
 import shorten
 import lookup
 
@@ -39,11 +37,11 @@ def results():
 
 @app.route('/<path>')
 def send_away(path):
-    print('path found:', path)
+#    print('path found:', path) # debug
     # Send to function to look up original URL.
     # Serve new page bearing .
     retrieved_url = lookup.get_url(path)
-    print('in send_away:', retrieved_url)
+#    print('in send_away:', retrieved_url) # debug
     return render_template('refresh.html', url=retrieved_url)
 
 if __name__ == '__main__':

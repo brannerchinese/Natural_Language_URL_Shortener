@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # lookup.py
 # David Prager Branner
-# 20140527
+# 20140527, works.
 
 """Retrieve a URL from the database."""
 
@@ -22,5 +22,5 @@ def get_url(path, db='url.db'):
         except Exception as e:
             print(e)
         url = cursor.fetchone()
-    print('in get_url:', url[0])
+#    print('in get_url:', url[0]) # debut
     return url[0]
