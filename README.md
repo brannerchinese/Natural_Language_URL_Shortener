@@ -14,11 +14,11 @@ This project uses Chinese characters as the basis of shortened URLs.
 
         python web_app.py
 
-   and point browser at `http://127.0.0.1:5000`. Currently only a generated "path", rather than a whole URL, is served.
+   and point a browser at `http://127.0.0.1:5000`. 
 
-   Enter a URL in the text field and submit. The URL will be stored in a database and you will be given a new, short URL that will point to it.
+   Enter a URL in the text field and submit. The URL will be stored in a database and you will be given a new, short URL that will point to that URL.
 
-### Ideas
+### Ideas in Play
 
  1. There are some 21K Chinese characters in the Unicode CJK Unified Ideographs block, so far fewer of them are needed to generate the same number of strings as would be needed with ASCII, for strings of a given length: two-kanji strings number over 440M and three-kanji strings over 9T. 
 
