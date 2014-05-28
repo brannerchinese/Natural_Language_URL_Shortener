@@ -16,23 +16,21 @@ This project uses Chinese characters as the basis of shortened URLs.
 
    and point a browser at `http://127.0.0.1:5000`. 
 
-   Enter a URL in the text field and submit. The URL will be stored in a database and you will be given a new, short URL that will point to that URL.
+   Enter a URL in the text field and submit. The URL will be stored in a database and you will be given a new, short URL that will point to the original URL. The new URL will be of the form `http://127.0.0.1:5000/完`, where the "path" `完` stands for one or more Chinese characters.
 
 ### Ideas in Play
 
- 1. There are some 21K Chinese characters in the Unicode CJK Unified Ideographs block, so far fewer of them are needed to generate the same number of strings as would be needed with ASCII, for strings of a given length: two-kanji strings number over 440M and three-kanji strings over 9T. 
+ 1. There are roughly 2650 characters in the domain of the Hànyǔ Shuǐpíng Kǎoshì (official "Chinese Proficiency Test" or HSK), up to level 6. These represent the characters appearing in the most common words in the Chinese language. The inventory of two-character strings that can be composed by combining any two of these indiscriminately is about seven million; three character strings number about 19 billion, and four character strings about 50 trillion. That means that strings or not more than four characters vastly outnumber the entire set of four-character strings that can be generated with the roughly 100 printable lower ASCII characters.
 
- 1. There are roughly 2650 characters in the domain of the Hànyǔ Shuǐpíng Kǎoshì (official "Chinese Proficiency Test" or HSK), up to level 6. These represent the most common characters in the Chinese language. The inventory of two-character strings is about seven million; three character strings number about 19 billion, and four character strings number about 50 trillion. This means that strings or not more than three characters vastly outnumber the entire set of three-character strings that can be generated with the roughly 100 lower ASCII characters.
-
- 1. We assume here that the purpose of shortened URLs is chiefly for human convenience, so it doesn't matter that each kanji is represented internally by a four-place hexadecimal sequence.
+ 1. We assume here that the purpose of shortened URLs is chiefly for human convenience, so it doesn't matter that each Chinese character is represented internally by a four-place hexadecimal sequence.
 
  1. Since this is a proof-of-concept, we are not concerned with scalability at this stage, so shortened paths are assigned randomly rather than by a reproducible hashing function. We are not concerned with duplicate URLs appearing in the database, either, since shortened strings are plentiful.
 
- 1. Note that because the shortened strings are generated randomly, they are unlikely to be meaningful. However, since only very common characters are used, the strings can be read by any literate person.
+ 1. Note that because these shortened strings are generated randomly, they are unlikely to be meaningful. However, since only very common characters are used, the strings should be readable by any literate person.
 
 ### To Do
 
- 1. Handle paths without a URL found in the dictionary.
+ 1. Handle paths when no corresponding URL found in the dictionary.
 
  1. Validate URLs, both as to form and as to accessibility, before storing.
 
