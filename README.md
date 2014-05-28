@@ -20,7 +20,7 @@ This project uses Chinese characters as the basis of shortened URLs.
 
 ### Ideas in Play
 
- 1. There are roughly 2650 characters in the domain of the Hànyǔ Shuǐpíng Kǎoshì (official "Chinese Proficiency Test" or HSK), up to level 6. These represent the characters appearing in the most common words in the Chinese language. The inventory of two-character strings that can be composed by combining any two of these indiscriminately is about seven million; three character strings number about 19 billion, and four character strings about 50 trillion. That means that strings or not more than four characters vastly outnumber the entire set of four-character strings that can be generated with the roughly 100 printable lower ASCII characters.
+ 1. There are roughly 2650 characters in the domain of the Hànyǔ Shuǐpíng Kǎoshì 漢語水平考試 (official "Chinese Proficiency Test" or HSK), up to level 6. These represent the characters appearing in the most common words of the Chinese language. The inventory of two-character strings that can be composed by combining any two of these indiscriminately is about seven million; three character strings number about 19 billion, and four character strings about 50 trillion. That means that strings or not more than four characters vastly outnumber the entire set of four-character strings that can be generated with the roughly 100 printable lower ASCII characters.
 
  1. We assume here that the purpose of shortened URLs is chiefly for human convenience, so it doesn't matter that each Chinese character is represented internally by a four-place hexadecimal sequence.
 
@@ -39,5 +39,6 @@ This project uses Chinese characters as the basis of shortened URLs.
  1. Add a table to the database to keep track of how many 1-char short forms there are, how many 2-char short forms, and so on. Eventually there will be no need to check for empty 1-char records.
 
  1. Add an `expiration_date` field to the `shortened_to_url` table, so that some shortened URLs can be deleted after a given date. There should be a way of keeping track of which shortned URLs have such dates, so that `shortened_to_url` can be pruned easily.
+ 1. Both traditional and simplified forms are available in `hsk.py`. Add the option to select one or the other set to the website. Better, select only those characters appearing in both sets.
 
 [end]
