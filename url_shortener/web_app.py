@@ -13,6 +13,7 @@ from wtforms.validators import DataRequired
 import sys
 sys.path.append('code')
 import shorten
+import lookup
 
 class InputForm(Form):
     url = TextAreaField('URL to be shortened', validators=[DataRequired()])
@@ -27,6 +28,7 @@ def index():
     the_form = InputForm()
     if the_form.validate_on_submit():
         session['url'] = the_form.url.data
+        # QQQ validate this url; is it well formed? Is it real?
         return redirect('/shortened')
     return render_template('index.html', form=the_form)
 
@@ -36,8 +38,13 @@ def results():
     return render_template('results.html', path=path)
 
 @app.route('/<path>')
-def redirect():
-    pass
+def send_away(path):
+    print('path found:', path)
+    # Send to function to look up original URL.
+    # Serve new page bearing .
+    retrieved_url = lookup.get_url(path)
+    print('in send_away:', retrieved_url)
+    return render_template('refresh.html', url=retrieved_url)
 
 if __name__ == '__main__':
     app.run(debug=True)
