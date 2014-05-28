@@ -1,6 +1,6 @@
 ## URL Shortener
 
-This project uses Chinese characters ("kanji", as a shorthand name) as the basis of shortened URLs. 
+This project uses Chinese characters as the basis of shortened URLs. 
 
 ### To Install
 
@@ -20,7 +20,7 @@ This project uses Chinese characters ("kanji", as a shorthand name) as the basis
 
 ### Ideas
 
- 1. There are some 21K kanji in the Unicode CJK Unified Ideographs block, so far fewer of them are needed to generate the same number of strings as would be needed with ASCII, for strings of a given length: two-kanji strings number over 440M and three-kanji strings over 9T. 
+ 1. There are some 21K Chinese characters in the Unicode CJK Unified Ideographs block, so far fewer of them are needed to generate the same number of strings as would be needed with ASCII, for strings of a given length: two-kanji strings number over 440M and three-kanji strings over 9T. 
 
  1. There are roughly 2650 characters in the domain of the Hànyǔ Shuǐpíng Kǎoshì (official "Chinese Proficiency Test" or HSK), up to level 6. These represent the most common characters in the Chinese language. The inventory of two-character strings is about seven million; three character strings number about 19 billion, and four character strings number about 50 trillion. This means that strings or not more than three characters vastly outnumber the entire set of three-character strings that can be generated with the roughly 100 lower ASCII characters.
 
