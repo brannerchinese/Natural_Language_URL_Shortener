@@ -31,7 +31,7 @@ This project uses Chinese characters as the basis of shortened URLs. The origina
 
  1. Since this is a proof-of-concept, we are not concerned with scalability at this stage, so shortened paths are assigned randomly rather than by a reproducible hashing function. We are not concerned with duplicate URLs appearing in the database, either, since shortened strings are plentiful.
 
- 1. Note that because these shortened strings are generated randomly, they are unlikely to be meaningful. However, since only very common characters are used, the strings should be readable by any literate person.
+ 1. Note that because these shortened strings are generated randomly, they are unlikely to be meaningful. However, since only very common characters are used, the strings should be readable by anyone literate in Chinese.
 
 ### Small features
 
