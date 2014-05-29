@@ -11,7 +11,8 @@ def validate_by_opening(url):
     """Try opening a URL and report whether successful or not."""
     try:
         code = R.urlopen(url).getcode()
-    except ValueError as e:
-        return
+    except Exception as e:
+        print(e)
+        return False
     if code == 200:
         return True
