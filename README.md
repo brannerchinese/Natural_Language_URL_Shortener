@@ -14,9 +14,14 @@ This project uses Chinese characters as the basis of shortened URLs. The origina
 
         python web_app.py
 
-   and point a browser at `http://127.0.0.1:5000`. 
+   the response should be
 
-   Enter a URL in the text field and submit. The URL will be stored in a database and you will be given a new, short URL that will point to the original URL. The new URL will be of the form `http://127.0.0.1:5000/完`, where the "path" `完` stands for one or more Chinese characters.
+         * Running on http://127.0.0.1:5000/
+         * Restarting with reloader
+   
+ 1. Point a browser at `http://127.0.0.1:5000`. 
+
+ 1. Enter a URL in the text field and submit. The URL will be stored in a database and you will be given a new, short URL that will point to the original URL. The new URL will be of the form `http://127.0.0.1:5000/完`, where the "path" `完` stands for one or more Chinese characters.
 
 ### Ideas in Play
 
