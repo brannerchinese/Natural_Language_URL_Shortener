@@ -5,7 +5,7 @@
 
 """Flask application to run URL-shortening project."""
 
-from flask import Flask, render_template, redirect, session, Markup
+from flask import Flask, render_template, redirect, session, Markup, make_response
 from flask.ext.bootstrap import Bootstrap
 from flask.ext.wtf import Form
 from wtforms import TextField, TextAreaField, SubmitField
@@ -24,7 +24,8 @@ bootstrap = Bootstrap(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    session['message'] = ''
+    if 'message' not in session:
+        session['message'] = ''
     session['url'] = None
     session['path'] = None
     the_form = InputForm()
@@ -37,7 +38,6 @@ def index():
             session['message'] = (
                 '''URL {} could not be validated; try again.'''.
                 format(session['url']))
-            print('failed')
     return render_template('index.html', form=the_form, session=session)
 
 @app.route('/shortened')
@@ -50,12 +50,14 @@ def results(path=None):
 def send_away(path):
     if path == None:
         index()
-#    print('path found:', path) # debug
     # Send to function to look up original URL.
-    # Serve new page bearing .
+    # Serve new page bearing the path assigned.
     retrieved_url = lookup.get_url(path)
-#    print('in send_away:', retrieved_url) # debug
-    return render_template('refresh.html', url=retrieved_url)
+    if retrieved_url == None:
+        response = make_response(redirect('/'))
+        session['message'] = 'Path {} was not found'.format(path)
+        return redirect('/')
+    return render_template('refresh.html', url=retrieved_url[0])
 
 if __name__ == '__main__':
     app.run(debug=True)

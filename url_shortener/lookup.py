@@ -9,7 +9,6 @@ import sqlite3
 
 def get_url(path, db='url.db'):
     """Retreive URL corresponding to a given path."""
-    print('path:', path)
     connection = sqlite3.connect(db)
     retrieved = None
     with connection:
@@ -18,10 +17,10 @@ def get_url(path, db='url.db'):
             cursor.execute(
                     '''SELECT url '''
                     '''FROM shortened_to_url '''
-                    '''WHERE shortened=? ''', path
+                    '''WHERE shortened=? ''', (path,)
                     )
         except Exception as e:
             print(e)
+            return
         url = cursor.fetchone()
-    print('in lookup.get_url; url:', url[0]) # debug
-    return url[0]
+    return url
