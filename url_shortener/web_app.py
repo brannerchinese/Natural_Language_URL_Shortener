@@ -51,10 +51,6 @@ def results(path=None):
 
 @app.route('/<path>')
 def send_away(path):
-#    if path == None:
-#        print('here')
-#        session['message'] = ''
-#        return redirect('/')
     # Send to function to look up original URL.
     # Serve new page bearing the path assigned.
     retrieved_url = lookup.get_url(path)
