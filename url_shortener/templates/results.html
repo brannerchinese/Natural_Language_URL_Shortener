@@ -4,16 +4,10 @@
 {% extends "bootstrap/base.html" %}
 {% block title %}Shortened Path{% endblock %}
 
-{% block navbar %}
-<div class="navbar navbar-fixed-top">
-  <!-- ... -->
-</div>
-{% endblock %}
-
 {% block content %}
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 <div class="container">
-  {{ session['url'] }}
-  <p>{{ path }}
+The URL you submitted: {{ session['url'] }}<br>
+has been shortened to <span class="to_copy" >{{ path }}</span>.
 </div>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 {% endblock %}
