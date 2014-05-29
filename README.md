@@ -1,10 +1,10 @@
 ## URL Shortener
 
-This project uses Chinese characters as the basis of shortened URLs. 
+This project uses Chinese characters as the basis of shortened URLs. The original assignment was on [this Hackpad](https://hackpad.com/Build-a-url-shortener-JbagqacCoon) (accessed 20140526) and the initial working prototype was constructed in a few hours one late afternoon and early evening.
 
 ### To Install
 
- 1. This is a Python3 project. The only dependency outside of the `requirements.txt` file is `sqlite3`.
+ 1. This is a Python3 project and you are assumed to be using a `virtualenv` virtual environment. The only dependency outside of the `requirements.txt` file is `sqlite3`.
 
  1. Enter the `url_shortener` directory and create database:
 
