@@ -47,6 +47,8 @@ This project uses Chinese characters as the basis of shortened URLs. The origina
 
  1. With Flask, should use Flask-SQLAlchemy rather than pure SQL.
 
+ 1. Use `urllib.request.urlopen(url).geturl()` to find actual URL received back from the request. Use that for another table in database: true URL to short path, in order to avoid redundant entries.
+
  1. Add a table to the database to keep track of how many 1-char short forms there are, how many 2-char short forms, and so on. Eventually there will be no need to check for empty 1-char records.
 
  1. Keep statistics on when short URLs are used? But this is not of much interest here.
