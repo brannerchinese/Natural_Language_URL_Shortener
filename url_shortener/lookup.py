@@ -23,4 +23,5 @@ def get_url(path, db='url.db'):
             print(e)
             return
         url = cursor.fetchone()
+        print(repr(url))
     return url

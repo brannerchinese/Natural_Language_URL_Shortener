@@ -22,10 +22,10 @@ def shorten(session, db='url.db'):
     connection = sqlite3.connect(db)
     with connection:
         cursor = connection.cursor()
-        path = get_path(cursor, session['url'])
+        path = assign_path(cursor, session['url'])
     return 'http://127.0.0.1:5000/' + path
 
-def get_path(cursor, url, charset=hsk.simp):
+def assign_path(cursor, url, charset=hsk.simp):
     """Try 20 times to get, at random, an empty slot for a one-digit path.
 
     If that fails, try two digits, etc."""

@@ -61,7 +61,9 @@ def send_away(path):
     if retrieved_url == None:
         session['message'] = 'Path {} was not found'.format(path)
         return redirect('/')
-    return render_template('refresh.html', url=retrieved_url[0])
+    else:
+        retrieved_url = retrieved_url[0].strip('\n\r')
+    return render_template('refresh.html', url=retrieved_url)
 
 if __name__ == '__main__':
     app.run(debug=True)
