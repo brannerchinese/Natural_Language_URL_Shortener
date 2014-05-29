@@ -7,7 +7,7 @@
 {% block content %}
 <div class="container">
 The URL you submitted: {{ session['url'] }}<br>
-has been shortened to <span class="to_copy" >{{ path }}</span>.
+has been shortened to <strong class="to_copy" >{{ path }}</strong>
 </div>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 {% endblock %}
