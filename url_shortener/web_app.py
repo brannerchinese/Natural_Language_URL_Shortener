@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # web_app.py
 # David Prager Branner
-# 20140527, works
+# 20140529, works
 
 """Flask application to run URL-shortening project."""
 
@@ -12,6 +12,7 @@ from wtforms import TextField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired
 import shorten
 import lookup
+import utils as U
 
 class InputForm(Form):
     url = TextAreaField('URL to be shortened', validators=[DataRequired()])
@@ -23,20 +24,32 @@ bootstrap = Bootstrap(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    session['message'] = ''
+    session['url'] = None
+    session['path'] = None
     the_form = InputForm()
     if the_form.validate_on_submit():
         session['url'] = the_form.url.data
-        # QQQ validate this url; is it well formed? Is it real?
-        return redirect('/shortened')
-    return render_template('index.html', form=the_form)
+        # Validate this url before proceeding.
+        if U.validate_by_opening(session['url']):
+            return redirect('/shortened')
+        else:
+            session['message'] = (
+                '''URL {} could not be validated; try again.'''.
+                format(session['url']))
+            print('failed')
+    return render_template('index.html', form=the_form, session=session)
 
 @app.route('/shortened')
-def results():
-    path = shorten.shorten(session['url'])
+def results(path=None):
+    path = shorten.shorten(session)
+    session['path'] = path
     return render_template('results.html', path=path)
 
 @app.route('/<path>')
 def send_away(path):
+    if path == None:
+        index()
 #    print('path found:', path) # debug
     # Send to function to look up original URL.
     # Serve new page bearing .
