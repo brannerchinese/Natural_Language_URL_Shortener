@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # shorten.py
 # David Prager Branner
-# 20140527, works.
+# 20140529, works.
 
 import sys
 if sys.version_info[0] != 3:
@@ -13,12 +13,16 @@ import hsk
 
 """Using kanji, generate a string for use as the path in a shortened URL."""
 
-def shorten(url, db='url.db'):
+def shorten(session, db='url.db'):
     """Return a unique string to represent input string url."""
+    # Don't generate new path if one already exists.
+    if 'path' in session and session['path']:
+        return session['path']
+    # New path needed.
     connection = sqlite3.connect(db)
     with connection:
         cursor = connection.cursor()
-        path = get_path(cursor, url)
+        path = get_path(cursor, session['url'])
     return 'http://127.0.0.1:5000/' + path
 
 def get_path(cursor, url, charset=hsk.simp):
