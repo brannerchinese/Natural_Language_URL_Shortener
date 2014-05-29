@@ -33,6 +33,8 @@ def index():
         session['url'] = the_form.url.data
         # Validate this url before proceeding.
         if U.validate_by_opening(session['url']):
+            # Remove any previous messages.
+            session['message'] = ''
             return redirect('/shortened')
         else:
             session['message'] = (
@@ -44,17 +46,19 @@ def index():
 def results(path=None):
     path = shorten.shorten(session)
     session['path'] = path
+    session['message'] = ''
     return render_template('results.html', path=path)
 
 @app.route('/<path>')
 def send_away(path):
-    if path == None:
-        index()
+#    if path == None:
+#        print('here')
+#        session['message'] = ''
+#        return redirect('/')
     # Send to function to look up original URL.
     # Serve new page bearing the path assigned.
     retrieved_url = lookup.get_url(path)
     if retrieved_url == None:
-        response = make_response(redirect('/'))
         session['message'] = 'Path {} was not found'.format(path)
         return redirect('/')
     return render_template('refresh.html', url=retrieved_url[0])
