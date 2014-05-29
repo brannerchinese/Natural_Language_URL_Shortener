@@ -5,15 +5,9 @@
 {% import "bootstrap/wtf.html" as wtf %}
 {% block title %}URL Shortener{% endblock %}
 
-{% block navbar %}
-<div class="navbar navbar-fixed-top">
-  <!-- ... -->
-</div>
-{% endblock %}
-
 {% block content %}
 <div class="container">
-  <h2>Enter URL to be shortened</h2>
-    <div>{{ wtf.quick_form(form) }}</div>
+  <div>{{ session['message'] }}</div><br>
+  <div>{{ wtf.quick_form(form) }}</div>
 </div>
 {% endblock %}
