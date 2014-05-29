@@ -35,8 +35,8 @@ This project uses Chinese characters as the basis of shortened URLs. The origina
 
 ### Small features
 
- 1. URL-validation is done simply by trying to load the proposed URL. 
- 1. Paths that do not exist return an error message at the top of the `index.html` page.
+ 1. URL-validation is done empirically by trying to load the proposed URL, rather than by analyzing its form.
+ 1. Paths that do not exist in the database return an error message at the top of the `index.html` page.
 
 
 ### To Do
