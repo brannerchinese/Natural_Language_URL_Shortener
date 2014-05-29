@@ -41,12 +41,14 @@ This project uses Chinese characters as the basis of shortened URLs. The origina
 
 ### To Do
 
- 1. Can we keep statistics on usage?
-
- 1. Add a table to the database to keep track of how many 1-char short forms there are, how many 2-char short forms, and so on. Eventually there will be no need to check for empty 1-char records.
-
  1. Add an `expiration_date` field to the `shortened_to_url` table, so that some shortened URLs can be deleted after a given date. There should be a way of keeping track of which shortned URLs have such dates, so that `shortened_to_url` can be pruned easily.
 
  1. Both traditional and simplified forms are available in `hsk.py`. Add the option to select one or the other set to the website. Better, select only those characters appearing in both lists — the intersection of the two contains 1692 characters.
+
+ 1. With Flask, should use Flask-SQLAlchemy rather than pure SQL.
+
+ 1. Add a table to the database to keep track of how many 1-char short forms there are, how many 2-char short forms, and so on. Eventually there will be no need to check for empty 1-char records.
+
+ 1. Keep statistics on when short URLs are used? But this is not of much interest here.
 
 [end]
