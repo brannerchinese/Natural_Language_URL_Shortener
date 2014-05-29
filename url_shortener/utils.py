@@ -12,7 +12,6 @@ def validate_by_opening(url):
     try:
         code = R.urlopen(url).getcode()
     except Exception as e:
-        print(e)
         return False
     if code == 200:
         return True
