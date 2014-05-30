@@ -41,16 +41,18 @@ This project uses Chinese characters as the basis of shortened URLs. The origina
 
 ### To Do
 
- 1. Add an `expiration_date` field to the `shortened_to_url` table, so that some shortened URLs can be deleted after a given date. There should be a way of keeping track of which shortned URLs have such dates, so that `shortened_to_url` can be pruned easily.
+ 1. With Flask, should really be using Flask-SQLAlchemy rather than pure SQL via Python.
 
- 1. Both traditional and simplified forms are available in `hsk.py`. Add the option to select one or the other set to the website. Better, select only those characters appearing in both lists — the intersection of the two contains 1692 characters.
+ 1. Add an `expiration_date` field to the `shortened_to_url` table, so that some shortened URLs can be deleted after a given date. There should be a way of keeping track of which shortened URLs have such dates, so that the table can be pruned easily.
 
- 1. With Flask, should use Flask-SQLAlchemy rather than pure SQL.
+ 1. Both traditional and simplified forms are available in `hsk.py`. There are 2671 of the former and 2635 of the latter, though the same morphemes are being represnted with both sets. Add the option to select one or the other set to the website. 
+
+ 1. Better, select only those characters appearing in both Chinese character-lists — the intersection of the two contains 1692 characters. Those characters are neutral with respect to the traditional-simplified divide.
 
  1. Use `urllib.request.urlopen(url).geturl()` to find actual URL received back from the request. Use that for another table in database: true URL to short path, in order to avoid redundant entries.
 
- 1. Add a table to the database to keep track of how many 1-char short forms there are, how many 2-char short forms, and so on. Eventually there will be no need to check for empty 1-char records.
+ 1. Add a table to the database to keep track of how many 1-char short forms there are, how many 2-char short forms, and so on. Once the database begins to fill there will be no need to check for empty 1-char records.
 
- 1. Keep statistics on when short URLs are used? But this is not of much interest here.
+ 1. Keep statistics on when short URLs are used.
 
 [end]
