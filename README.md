@@ -41,8 +41,6 @@ This project uses Chinese characters as the basis of shortened URLs. The origina
 
 ### To Do
 
- 1. With Flask, should really be using Flask-SQLAlchemy rather than pure SQL via Python.
-
  1. Add an `expiration_date` field to the `shortened_to_url` table, so that some shortened URLs can be deleted after a given date. There should be a way of keeping track of which shortened URLs have such dates, so that the table can be pruned easily.
 
  1. Both traditional and simplified forms are available in `hsk.py`. There are 2671 of the former and 2635 of the latter, though the same morphemes are being represnted with both sets. Add the option to select one or the other set to the website. 
