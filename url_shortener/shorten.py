@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # shorten.py
 # David Prager Branner
-# 20140529, works.
+# 20140530, works.
 
 import sys
 if sys.version_info[0] != 3:
@@ -20,10 +20,6 @@ def shorten(session, db='url.db'):
         return session['path']
     # New path needed.
     path = assign_path(session['url'])
-#    connection = sqlite3.connect(db)
-#    with connection:
-#        cursor = connection.cursor()
-#        path = assign_path(cursor, session['url'])
     return 'http://127.0.0.1:5000/' + path
 
 def assign_path(url, charset=hsk.simp):
@@ -49,14 +45,5 @@ def assign_path(url, charset=hsk.simp):
                 print(e)
                 prospective_shortened = None
                 continue
-#            try:
-#                cursor.execute(
-#                        '''INSERT INTO shortened_to_url (shortened, url)'''
-#                        '''VALUES (?,?)''', (prospective_shortened, url)
-#                        )
-#                break
-#            except sqlite3.IntegrityError:
-#                prospective_shortened = None
-#                continue
         n += 1
     return prospective_shortened
