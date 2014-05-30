@@ -11,8 +11,8 @@ def get_url(path, db='url.db'):
     """Retreive URL corresponding to a given path."""
     engine = create_engine('sqlite:///url.db')
     metadata = MetaData(bind=engine)
-    users = Table('shortened_to_url', metadata, autoload=True)
-    url = users.select(users.c.shortened == path).execute().first()
+    urls = Table('shortened_to_url', metadata, autoload=True)
+    url = urls.select(urls.c.shortened == path).execute().first()
     try:
         url = url[1]
     except Exception:
