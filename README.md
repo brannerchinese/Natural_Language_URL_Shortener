@@ -8,7 +8,7 @@ This project uses Chinese characters as the basis of shortened URLs. The origina
 
  1. Enter the `url_shortener` directory and create the database:
 
-        sqlite3 url.db < create_shortener_database.sql
+        sqlite3 url.db < create_url_database.sql
 
  1. Then run the web-application:
 
