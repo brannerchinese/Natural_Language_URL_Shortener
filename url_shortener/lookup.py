@@ -1,26 +1,20 @@
 #!/usr/bin/env python3
 # lookup.py
 # David Prager Branner
-# 20140529, works.
+# 20140530, works.
 
 """Retrieve a URL from the database."""
 
-import sqlite3
+from sqlalchemy import create_engine, MetaData, Table
 
 def get_url(path, db='url.db'):
     """Retreive URL corresponding to a given path."""
-    connection = sqlite3.connect(db)
-    retrieved = None
-    with connection:
-        cursor = connection.cursor()
-        try:
-            cursor.execute(
-                    '''SELECT url '''
-                    '''FROM shortened_to_url '''
-                    '''WHERE shortened=? ''', (path,)
-                    )
-        except Exception as e:
-            print(e)
-            return
-        url = cursor.fetchone()
+    engine = create_engine('sqlite:///url.db')
+    metadata = MetaData(bind=engine)
+    users = Table('shortened_to_url', metadata, autoload=True)
+    url = users.select(users.c.shortened == path).execute().first()
+    try:
+        url = url[1]
+    except Exception:
+        url = None
     return url

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # web_app.py
 # David Prager Branner
-# 20140529, works
+# 20140530, works
 
 """Flask application to run URL-shortening project."""
 
@@ -58,7 +58,7 @@ def send_away(path):
         session['message'] = 'Path {} was not found'.format(path)
         return redirect('/')
     else:
-        retrieved_url = retrieved_url[0].strip('\n\r')
+        retrieved_url = retrieved_url.strip('\n\r')
     return render_template('refresh.html', url=retrieved_url)
 
 if __name__ == '__main__':
