@@ -20,6 +20,7 @@ class InputForm(Form):
 
 app = Flask(__name__) # __name__ because this file is self-contained.
 app.config['SECRET_KEY'] = 'secretsecret'
+app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 bootstrap = Bootstrap(app)
 
 @app.route('/', methods=['GET', 'POST'])

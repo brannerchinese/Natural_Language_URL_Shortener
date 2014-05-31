@@ -13,7 +13,7 @@ import hsk
 
 """Using kanji, generate a string for use as the path in a shortened URL."""
 
-def shorten(session, db='url.db'):
+def shorten(session):
     """Return a unique string to represent input string url."""
     # Don't generate new path if one already exists.
     if 'path' in session and session['path']:
