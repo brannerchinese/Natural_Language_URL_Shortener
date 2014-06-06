@@ -8,7 +8,7 @@ Instead, I found a way to produce paths that are always short but still easy to 
 
 I built this as part of the [Iron Forger exercise](https://hackpad.com/Iron-Forger-kEmauANGcV5) that a few [Hacker School](http://hackerschool.com) alums did to keep our teeth sharp during the summer of 2014 — the goal being to complete one project a week for eight weeks. The original project assignment was on [this Hackpad](https://hackpad.com/Build-a-url-shortener-JbagqacCoon) (accessed 20140526) and the initial working prototype was constructed in a few hours one late afternoon and early evening.
 
-### Spoiler (decode as ROT₁₃)
+### Spoiler (decode as ROT13)
 
 Guvf cebwrpg hfrf Puvarfr punenpgref nf gur onfvf bs fubegrarq HEYf. 
 
