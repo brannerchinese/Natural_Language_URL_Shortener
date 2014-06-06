@@ -1,6 +1,10 @@
 ## Natural Language URL Shortener
 
-This project uses Chinese characters as the basis of shortened URLs. I built it as part of the [Iron Forger exercise](https://hackpad.com/Iron-Forger-kEmauANGcV5) that a few Hacker School alums did to keep our teeth sharp during the summer of 2014 — the goal being to complete one project a week for eight weeks. The original project assignment was on [this Hackpad](https://hackpad.com/Build-a-url-shortener-JbagqacCoon) (accessed 20140526) and the initial working prototype was constructed in a few hours one late afternoon and early evening.
+This project uses Chinese characters as the basis of shortened URLs. 
+
+### Background
+
+I built this as part of the [Iron Forger exercise](https://hackpad.com/Iron-Forger-kEmauANGcV5) that a few [Hacker School](http://hackerschool.com) alums did to keep our teeth sharp during the summer of 2014 — the goal being to complete one project a week for eight weeks. The original project assignment was on [this Hackpad](https://hackpad.com/Build-a-url-shortener-JbagqacCoon) (accessed 20140526) and the initial working prototype was constructed in a few hours one late afternoon and early evening.
 
 ### To Install
 
