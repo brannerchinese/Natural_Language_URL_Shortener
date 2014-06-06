@@ -1,6 +1,6 @@
 ## Natural Language URL Shortener
 
-URL shorteners usually assign you a "path" (the final segment of a URL other than any parameters) that is either a hash or a string of your own choosing. Hashes are hard to remember and strings aren't usually very short.
+URL shorteners usually assign you a "path" (the final segment of a URL other than any parameters) that is either a hash or a custom string of your own choosing. Hashes are hard to remember and custom strings aren't usually very short (the short ones tend to get taken early).
 
 Instead, I found a way to produce paths that are always short but still easy to remember because they draw on natural language. Can you guess how?
 
