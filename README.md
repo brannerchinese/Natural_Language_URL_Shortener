@@ -1,10 +1,16 @@
 ## Natural Language URL Shortener
 
-This project uses Chinese characters as the basis of shortened URLs. 
+URL shorteners usually assign you a "path" (the final segment of a URL other than any parameters) that is either a hash or a string of your own choosing. Hashes are hard to remember and strings aren't usually very short.
+
+Instead, I found a way to produce paths that are always short but still easy to remember because they draw on natural language. Can you guess how?
 
 ### Background
 
 I built this as part of the [Iron Forger exercise](https://hackpad.com/Iron-Forger-kEmauANGcV5) that a few [Hacker School](http://hackerschool.com) alums did to keep our teeth sharp during the summer of 2014 — the goal being to complete one project a week for eight weeks. The original project assignment was on [this Hackpad](https://hackpad.com/Build-a-url-shortener-JbagqacCoon) (accessed 20140526) and the initial working prototype was constructed in a few hours one late afternoon and early evening.
+
+### Spoiler (decode as ROT₁₃)
+
+Guvf cebwrpg hfrf Puvarfr punenpgref nf gur onfvf bs fubegrarq HEYf. 
 
 ### To Install
 
