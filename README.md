@@ -53,7 +53,7 @@ Guvf cebwrpg hfrf Puvarfr punenpgref nf gur onfvf bs fubegrarq HEYf.
 
  1. Add an `expiration_date` field to the `shortened_to_url` table, so that some shortened URLs can be deleted after a given date. There should be a way of keeping track of which shortened URLs have such dates, so that the table can be pruned easily.
 
- 1. Both traditional and simplified forms are available in `hsk.py`. There are 2671 of the former and 2635 of the latter, though the same morphemes are being represnted with both sets. Add the option to select one or the other set to the website. 
+ 1. Both traditional and simplified forms are available in `hsk.py`. There are 2671 of the former and 2635 of the latter, though the same morphemes are being represented with both sets. Add the option to select one or the other set to the website. 
 
  1. Better, select only those characters appearing in both Chinese character-lists — the intersection of the two contains 1692 characters. Those characters are neutral with respect to the traditional-simplified divide.
 
