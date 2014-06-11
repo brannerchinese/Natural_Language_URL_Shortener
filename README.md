@@ -35,6 +35,8 @@ Guvf cebwrpg hfrf Puvarfr punenpgref nf gur onfvf bs fubegrarq HEYf.
 
 ### Ideas in Play
 
+(Please note that the directory `presentation/` contains the slides for a lightning talk delivered at Hack and Tell (New York) on 20140610.)
+
  1. There are roughly 2650 characters in the domain of the Hànyǔ Shuǐpíng Kǎoshì 漢語水平考試 (official "Chinese Proficiency Test" or HSK), up to level 6. These represent the characters appearing in the most common words of the Chinese language. The inventory of two-character strings that can be composed by combining any two of these indiscriminately is about seven million; three character strings number about 19 billion, and four character strings about 50 trillion. That means that strings of not more than four characters vastly outnumber the entire set of four-character strings that can be generated with the roughly 100 printable lower ASCII characters.
 
  1. We assume here that the purpose of shortened URLs is chiefly for human convenience, so it doesn't matter that each Chinese character is represented internally by a four-place hexadecimal sequence.
